@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Simple Linked List Program</h1>
+
+    <script>
+
+        class Node {
+            // constructor
+            constructor(element) {
+                this.element = element;
+                this.next = null
+            }
+        }
+        // linkedlist class
+        class LinkedList {
+            constructor() {
+                this.head = null;
+                this.size = 0;
+            }
+
+            // adds an element at the end
+            // of list
+            add(element) {
+                // creates a new node
+                var node = new Node(element);
+
+                // to store current node
+                var current;
+
+                // if list is Empty add the
+                // element and make it head
+                if (this.head == null)
+                    this.head = node;
+                else {
+                    current = this.head;
+
+                    // iterate to the end of the
+                    // list
+                    while (current.next) {
+                        current = current.next;
+                    }
+
+                    // add node
+                    current.next = node;
+                }
+                this.size++;
+            }
+
+            // insert element at the position index
+            insertAt(element, index) {
+                if (index < 0 || index > this.size)
+                    return console.log("Please enter a valid index.");
+                else {
+                    // creates a new node
+                    var node = new Node(element);
+                    var curr, prev;
+
+                    curr = this.head;
+
+                    // add the element to the
+                    // first index
+                    if (index == 0) {
+                        node.next = this.head;
+                        this.head = node;
+                    } else {
+                        curr = this.head;
+                        var it = 0;
+
+                        // iterate over the list to find
+                        // the position to insert
+                        while (it < index) {
+                            it++;
+                            prev = curr;
+                            curr = curr.next;
+                        }
+
+                        // adding an element
+                        node.next = curr;
+                        prev.next = node;
+                    }
+                    this.size++;
+                }
+            }
+ 
+
+            
+
+
+            removeFrom(index){
+                if(index<0 || index>= this .size)
+                    return console.log("please enter valid index");
+                else{
+
+                    var curr, prev,it=0;
+                    curr=this.head;
+                    prev=curr;
+
+                    //delele first element
+                    if(index==0){
+                        this.head=curr.next;
+                    }
+                    else{
+                       // iterate over the list to find the position
+                       while(it<index){
+                        it++;
+                        prev=curr;
+                        curr=curr.next;
+                       }
+
+                       //remove the element
+                       prev.next=curr.next
+                    }
+                    this.size--;
+
+                    return curr.element;
+                }
+            }
+
+            //removeElement(element)
+
+            removeElement(element){
+                var current=this.head;
+                var prev=null;
+
+                //iterate
+                while(current!=null){
+                    if(current.element === element){
+                        if(prev == null){
+                            this.head=current.next;
+                        }
+                        else{
+                            prev.next=current.next;
+                        }
+                        this.size--;
+                        return current.element;
+                    }
+                    prev=current;
+                    current=current.next;
+                }
+                return -1;
+            }
+
+            indexof(element){
+                var count=0;
+                var current = this.head;
+
+                //iterate
+                while(current !=null){
+                    if(current.element===element)
+                    return count;
+                    count++;
+                    current=current.next;
+                }
+
+                //not found
+                return -1;
+            }
+
+            isEmpty(){
+                return this.size==0;
+            }
+
+            size_of_list(){
+                console.log(this.size);
+            }
+
+            printList(){
+                var curr= this.head;
+                var str="";
+                while(curr){
+                    str+= curr.element+ " ";
+                    curr=curr.next;
+                }
+                console.log(str);
+            }
+
+            
+
+        }
+
+        var l1=new LinkedList();
+        console.log(l1.isEmpty());
+
+        l1.add(10);
+        l1.printList();
+
+        console.log(l1.size_of_list());
+
+        //adding few more elements
+        l1.add(20);
+        l1.add(30);
+        l1.add(40);
+        l1.add(50);
+        l1.add(60);
+
+
+        l1.printList();
+
+
+        console.log("Index of 40: "+l1.indexof(40));
+
+
+        l1.insertAt(70,2);
+        l1.printList();
+
+
+        console.log("is List Empty? "+l1.isEmpty());
+
+        console.log(l1.removeFrom(3));
+
+        l1.printList();
+
+        
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Hash Table Example</h2>
+
+    <script>
+
+        var simplehash =new Object();
+        // var simplehash= {};
+        simplehash['key1']='value1';
+        simplehash['key2']='value2';
+        simplehash['key3']='value3';
+        simplehash['key4']='value4';
+
+        for(var key in simplehash){
+
+            if(simplehash.hasOwnProperty(key)){
+                document.write("<br>key is: "+key+ ", Value is: "+simplehash[key]+"<br>");
+                console.log("key is: "+key+ ", Value is: "+simplehash[key]);
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

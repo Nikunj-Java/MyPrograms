@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays Methods</h1>
+
+    <script>
+        const array=[1,2,3,4,5,6,7,8,9];
+        console.log("Array at index 2:"+array[2]);
+        console.log("Array length:"+array.length);
+        console.log("Array Includes:"+array.includes(10));
+
+        console.log("Original Array:"+array)
+
+        //array(index,remove_count,item_list)
+        array.splice(10,0,10,11);
+        console.log("Splice to add after 10 index:"+array);
+
+        array.splice(0,4,15,20);
+        console.log("Splice to remove from 0 to 4 index:"+array);
+
+
+        console.log("to String Method:"+array.toString());
+
+
+        console.log("Arrays for Each:"+array.forEach(myFunction));
+
+        function myFunction(item){
+            console.log(item);
+        }
+
+
+        //push method
+        array.push(50);
+        console.log("After Push:"+array);
+
+        //pop method
+        array.pop();
+        console.log("After Pop:"+array);
+
+        //shift method
+        array.shift();
+        console.log("After Shift:"+array);
+
+        //unshift method
+
+        array.unshift(76);
+        console.log("After unshift: "+array);
+
+    </script>
+    
+</body>
+</html>

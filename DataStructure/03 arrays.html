@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const array = [1,2,3,4,5,6,7,8,9];
+        console.log("Array at 2:"+array[2]);
+        console.log("Array Length:"+array.length);
+        console.log("Array Includes:"+array.includes(3));
+        console.log("Array at an Index of:"+array.indexOf(6));
+        console.log("Original Array: "+ array);
+        //Array.splice( index, remove_count, item_list )
+        array.splice(10,0,10,11)
+        console.log("Splice to add after 10 index:"+array);
+        array.splice(0,4,15,20)
+        console.log("Splice to remove from 0 to 4 index:"+array);
+
+        console.log("to String Method:"+array.toString());
+
+      
+        console.log("Arrays For Each:"+array.forEach(myFunction));
+
+        function myFunction(item) {
+            console.log(item);
+        }
+        //sorting an array
+        //console.log("Array sort:"+array.sort());
+
+        array.push(10);
+        console.log("After Push: "+array);
+
+        array.pop();
+        console.log("Array After pop :"+array);
+
+        array.shift();
+        console.log("Array After Shift: "+array);
+
+        array.unshift(34);
+        console.log("Array After Unshift: "+array);
+    </script>
+    
+</body>
+</html>

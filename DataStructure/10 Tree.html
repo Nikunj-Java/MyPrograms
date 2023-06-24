@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>Tree Diagram</h1>
+    <center><h1 id="root"></h1></center>
+    <center><h1>&#8595;</h1></center>
+    <center><h2 id="child"></h2></center>
+    <center><h1>&#8595;            &#8595;         &#8595;</h1></center>
+    <center class="inline"> <h3 id="child1"> </h3> <h3 id="child2"> </h3> <h3 id="child3"></h3></center>
+
+    <script>
+        class TreeNode {
+            constructor(value) {
+                this.value = value;
+                this.descendants = [];
+            }
+        }
+
+        // create nodes with values
+        const nikunj = new TreeNode('Nikunj');
+        //here abe is root
+        const pragnesh = new TreeNode('Pragnesh');
+
+        const alex = new TreeNode('Alex');
+        const jhon = new TreeNode('Jhon');
+        const sirie = new TreeNode('Sirie');
+
+
+        document.getElementById("root").innerHTML=nikunj.value;
+
+        document.getElementById("child").innerHTML=pragnesh.value;
+
+        document.getElementById("child1").innerHTML=alex.value;
+        document.getElementById("child2").innerHTML=jhon.value;
+        document.getElementById("child3").innerHTML=sirie.value;
+
+        // associate root with is descendants
+
+        //pragnesh is child 
+        nikunj.descendants.push(pragnesh);
+        //alex, jhon and sirie are subchild
+        pragnesh.descendants.push(alex, jhon, sirie);
+        
+
+
+    </script>
+    
+</body>
+</html>
